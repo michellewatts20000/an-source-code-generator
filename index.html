@@ -30,10 +30,10 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center p-5">
-                    <i class="fas fa-link"></i>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 mx-auto text-center p-5">
+                    <i class="fas fa-link mb-3"></i>
 
-                    <h1 class="text-white">Action Network source code generator</h1>
+                    <h1 class="text-white">Action Network <br>source code generator</h1>
 
                     <form id="generator">
 
@@ -44,11 +44,14 @@
                         <button type="submit" value="Submit" class="btn btn-info">
                             Submit
                         </button>
+                        <button type="submit" value="Refresh Page" onClick="location.href=location.href" class="btn btn-danger">
+                            Clear
+                        </button>
 
 
-                        <div class="mt-3" id="result"></div>
+                        <div class="mt-5" id="result"></div>
                         <ul class="list-group" id="printed-links"></ul>
-
+                       
                     </form>
 
                 </div>
