@@ -50,8 +50,8 @@ var handleFormSubmit = function (event) {
     for (i = 0; i < map1.length; i++) {
         var listEl = $('<li>');
         var heading = $('<h4>')
-        var link = $('<a>').addClass('copy');
-        link.text(map1[i].source)
+        var link = $('<input>').on("click",(event) => myFunction(event));
+        link.val(map1[i].source)
         heading.text(map1[i].name)
         listEl.addClass('list-group-item copy');
         listEl.appendTo(skillsListEl);
@@ -60,22 +60,23 @@ var handleFormSubmit = function (event) {
     }
    
 
-
-
 };
 
 formEl.on('submit', handleFormSubmit);
 
-// function copyLink() {
-//     var linkSelect = document.querySelector(".copy");
-//     linkSelect.select();
-//     document.execCommand("copy");
-//     alert('Link copied!')
-// }
-
-// $(".copy").on('click', function(event){
-//     var linkSelect = document.querySelector(".copy");
-//     linkSelect.select();
-//     document.execCommand("copy");
-//     alert('Link copied!')
-// })
+function myFunction(event) {
+  
+    /* Get the text field */
+    var copyText = event.currentTarget;
+  console.log(copyText);
+  console.log(event);
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+  
+    /* Alert the copied text */
+    alert("Copied the text: " + copyText.value);
+  }
